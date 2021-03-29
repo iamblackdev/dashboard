@@ -24,10 +24,30 @@ body {
   font-family: 'Montserrat', sans-serif !important;
   background-color: #F6F6F6;
   box-sizing: border-box;
+  outline: none;
+  overflow-x: hidden !important;
+}
+* {
+  margin: 0px;
+  padding: 0px;
 }
 *:focus {
-  box-shadow: none !important;
-  outline: none;
+  box-shadow: none;
+}
+input:focus, .custom-select:focus, .form-control:focus {
+  box-shadow: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 .login-form{
   margin-top: 35px;

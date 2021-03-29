@@ -4,88 +4,8 @@
      <!-- SIDEBAR STARTS-->
   <div id="mySidenav" class="sidenav">
 
-    
-    <!-- SIDE BAR HEADER -->
-    <div class="sidebar_header">
-      <div>
-          <a href="javascript:void(0)" class="closebtn d-lg-none" @click="NavButtonMobile()">&times;</a>
-            <div class="side_nav_logo">			
-              <a href="#"><img src="logo.png" alt="logo" width="50" height="50"></a>    
-            </div>
-      </div>
-
-    </div>
-    <!-- SIDE BAR HEADER ENDS -->
-    
-      <!-- SIDE BAR NAV -->
-    <div class="sidebar_nav" >
-
-      <ul id="accordion">
-        <li class="sidebar_link">
-          <div class="tab">
-            
-            <label class="tab-label" id="headingOne">
-              <div data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <span><i class="fa fa-dashboard"></i></span>
-                <span class="ml-2 link-name">Dashboard</span>
-              </div>
-    
-            </label>
-
-            <div class="tab-content collapse " id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
-              <ul>
-                <li><a href="index.html">Dashboard</a></li>           
-              </ul>
-            </div>
-
-          </div>
-        </li>
-
-        <li class="sidebar_link">
-          <div class="tab">
-            
-            <label class="tab-label" id="headingTwo">
-              <div data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <span><i class="fa fa-dashboard"></i></span>
-                <span class="ml-2 link-name">Dashboard</span>
-              </div>
-    
-            </label>
-
-            <div class="tab-content collapse " id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
-              <ul>
-                <li><a href="index.html">Dashboard</a></li>           
-              </ul>
-            </div>
-
-          </div>
-        </li>
-
-        <li class="sidebar_link">
-          <div class="tab">
-            
-            <label class="tab-label" id="headingThree">
-              <div data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <span><i class="fa fa-dashboard"></i></span>
-                <span class="ml-2 link-name">Dashboard</span>
-              </div>
-    
-            </label>
-
-            <div class="tab-content collapse " id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
-              <ul>
-                <li><a href="index.html">Dashboard</a></li>           
-              </ul>
-            </div>
-
-          </div>
-        </li>
-      
-      </ul>
-
-
-    </div>
-    <!-- SIDE BAR NAV ENDS -->
+    <SideNav />
+  
 
   </div>
 
@@ -94,31 +14,16 @@
      
   <!-- MAIN CONTENT -->
 
-  <div id="main" class="main">
+  <div id="main" class="main" :class="{closeMain: closeMain}">
     <!-- HEADER -->
-    <div class="container-fluid d-flex nav_header justify-content-between">
+    <div class="container-fluid nav_header">
 
-      <div>
-        <span class="navbutton d-none d-lg-block" @click="navButton()">
-          <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-          </svg>
-        </span>
-        <span class="navbutton d-lg-none" @click="NavButtonMobile()">
-          <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-          </svg>
-        </span>
-      </div>
-
-      <div>
-        <a href="#"><img src="../assets/logo.png" alt="logo" width="50" height="50"></a>
-      </div>
+      <DashboardHeader></DashboardHeader>
 
     </div>
     <!-- HEADER ENDS -->
 
-     <div class="row">
+     <div class="row classess">
        <div class="col-lg-12 pl-3 pr-5 px-xl-5 pt-4">
 
 				
@@ -159,53 +64,54 @@
 				<!-- table -->
 				<div class="table-responsive">
 					<table class="table text-nowrap">
+
 					  <thead>
 						<tr>
 						  <td class="table_head  ">
 							S.No
 							<span class="caret"
-							  ><i class="fa fa-caret-up caret_up_one"></i> <br />
-							  <i class="fa fa-caret-down caret_down_one"></i
+							  ><i class="fa fa-caret-up caret_up"></i> <br />
+							  <i class="fa fa-caret-down caret_down"></i
 							></span>
 						  </td>
 
 						  <td class="table_head">
 							Growth
 							<span class="caret"
-							  ><i class="fa fa-caret-up caret_up_two"></i> <br />
-							  <i class="fa fa-caret-down caret_down_two"></i
+							  ><i class="fa fa-caret-up caret_up"></i> <br />
+							  <i class="fa fa-caret-down caret_down"></i
 							></span>
 						  </td>
 
 						  <td class="table_head">
 							Transaction id
 							<span class="caret"
-							  ><i class="fa fa-caret-up caret_up_three"></i> <br />
-							  <i class="fa fa-caret-down caret_down_three"></i
+							  ><i class="fa fa-caret-up caret_up"></i> <br />
+							  <i class="fa fa-caret-down caret_down"></i
 							></span>
 						  </td>
 
 						  <td class="table_head">
 							Price
 							<span class="caret"
-							  ><i class="fa fa-caret-up caret_up_four"></i> <br />
-							  <i class="fa fa-caret-down caret_down_four"></i
+							  ><i class="fa fa-caret-up caret_up"></i> <br />
+							  <i class="fa fa-caret-down caret_down"></i
 							></span>
 						  </td>
 
 						  <td class="table_head">
 							Transaction on
 							<span class="caret"
-							  ><i class="fa fa-caret-up caret_up_five"></i> <br />
-							  <i class="fa fa-caret-down caret_down_five"></i
+							  ><i class="fa fa-caret-up caret_up"></i> <br />
+							  <i class="fa fa-caret-down caret_down"></i
 							></span>
 						  </td>
 
 						  <td class="table_head">
 							Status
 							<span class="caret"
-							  ><i class="fa fa-caret-up caret_up_six"></i> <br />
-							  <i class="fa fa-caret-down caret_down_six"></i
+							  ><i class="fa fa-caret-up caret_up"></i> <br />
+							  <i class="fa fa-caret-down caret_down"></i
 							></span>
 						  </td>
 
@@ -223,7 +129,7 @@
 						  <td class="table_row text-right">100</td>
 						  <td class="table_row">07-28-2016/16:14:40</td>
 						  <td class="table_row">
-							  <span class="success">Pending</span>
+							  <span class="pending">Pending</span>
 						  </td>
 						</tr>
 						<tr>
@@ -268,78 +174,39 @@
 
 <script>
 // @ is an alias to /src
+import DashboardHeader from '../components/dashboard-header.vue';
+import SideNav from '../components/sideNav.vue';
 
 export default {
   name: 'dashboard',
+  components: {
+    DashboardHeader,
+    SideNav
+  },
   data() {
     return {
-      
+      closeMain: false
     }
   },
   methods: {
-      myEventHandler(e) {
-      let sidebar_header = document.querySelector(".sidebar_header")
-      let sidebar_nav = document.querySelector(".sidebar_nav")
-      let main = document.querySelector(".main")
-      let link_name = document.querySelectorAll(".link-name")
-      let tab_content = document.querySelectorAll('.tab-content')
-
+      checkScreenSize(e) {
         if (e.target.innerWidth >= 991) { 
-          sidebar_header.classList.remove('closeNav')
-          sidebar_nav.classList.remove('closeNav')
-          main.classList.remove('closeMain')
-        }else if (e.target.innerWidth < 991) { 
-          link_name.forEach(e => {
-            e.classList.remove('remove-name')
-          })
-          tab_content.forEach(e => {
-            e.classList.remove('remove-name')
-          })
+           this.closeMain = false
         }
       },
   
-    //  FUNCTION FOR NAV BUTTON IN SMALL LAPTOP SCREEN AND ABOVE
-     navButton() {
 
-      let sidebar_header = document.querySelector(".sidebar_header")
-      let sidebar_nav = document.querySelector('.sidebar_nav')
-      let main = document.querySelector(".main")
-      let link_name = document.querySelectorAll('.link-name')
-      let tab_content = document.querySelectorAll('.tab-content')
-
-
-
-      sidebar_header.classList.toggle('closeNav')
-      sidebar_nav.classList.toggle('closeNav')
-
-      main.classList.toggle('closeMain')
-
-      link_name.forEach(e => {
-        e.classList.toggle('remove-name')
-      })
-      tab_content.forEach(e => {
-        e.classList.toggle('remove-name')
-      })
-
-      sidebar_nav.addEventListener('mouseover', e => {
-        tab_content.forEach(e => {
-          e.classList.remove('remove-name')
-        })
-      })
-    },
-
-    NavButtonMobile(){
-      let sidebar_header = document.querySelector(".sidebar_header")
-      let sidebar_nav = document.querySelector('.sidebar_nav')
-      sidebar_header.classList.toggle('closeNav')
-      sidebar_nav.classList.toggle('closeNav')
-    }
   },
   created() {
-  window.addEventListener("resize", this.myEventHandler);
+  window.addEventListener("resize", this.checkScreenSize);
+  },
+   mounted(){
+    this.emitter.on('navButton', () => {
+      this.closeMain = !this.closeMain
+    })
   },
   destroyed() {
-    window.removeEventListener("resize", this.myEventHandler);
+    window.removeEventListener("resize", this.checkScreenSize);
   },
 }
 
@@ -347,39 +214,6 @@ export default {
 
 </script>
 <style scoped>
-  * {
-  margin: 0px;
-  padding: 0px;
-}
-body {
-  width: 100%;
-  height: 100%;
-  outline: none;
-  box-sizing: border-box;
-  font-family: Arial, Tahoma;
-  font-size: 16px;
-  color: #000;
-  background-color: #fff;
-}
-*:focus {
-  box-shadow: none;
-}
-input:focus, .custom-select:focus, .form-control:focus {
-  box-shadow: none;
-}
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-a,
-a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-/* SIDE BAR STYLE */
 .sidenav {
     overflow: hidden;
     height: 100%;
@@ -390,92 +224,16 @@ a:hover {
     overflow-x: hidden;
     transition: 0.5s;
   }
-  .closebtn {
-    position: absolute;
-    top: 0;
-    right: 35px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  .sidebar_header {
-    width: 250px;
-    padding-top: 20px;
-    text-align: center;
-    background: #303641;
-    border-bottom: 1px solid #343e50;
-    padding-bottom: 20px;
-    transition: 0.5s;
-  }
-  
-  .side_nav_logo a img {
-    max-width: 120px;
-  }
-  
-  .sidebar_nav {
-    width: 250px;
-    background: #303641;
-    padding-top: 40px;
-    transition: 0.5s;
-    height: 100%;
-  }
   .closeNav {
     width: 70px;
   }
   .closeNavMobile{
     width: 0px;
   }
-  .sidebar_nav:hover{
-    width: 250px;
-  }
-  .sidebar_nav:hover .remove-name{
-    display: inline-block;
-  }
-
-  .tab {
-    width: 100%;
-    color: white;
-    overflow: hidden;
-  }
-  .sidebar_nav .sidebar_link:hover .tab-label {
-    color: white;
-  }
-  .sidebar_link:hover .tab-label .fa {
-    color: white;
-  }
-  .tab-label {
-    padding: 15px 30px;
-    cursor: pointer;
-    color: #8d97ad;
-    transition: color 0.35s ease;
-    font-size: 15px;
-    text-transform: capitalize;
-    width: 100%;
-    margin-bottom: 0px;
-  }
-  .tab-label:hover {
-    background: #343942;
-  }
-  .tab-label .fa {
-    transition: color 0.35s ease;
-    color: #6a56a5;
-  }
-  .tab-content {
-    color: #8d97ad;
-    font-size: 15px;
-    margin-left: 40px;
-  }
-  .tab-content li {
-    margin-bottom: 15px;
-  }
-  .tab-content li:hover {
-    color: white;
-  }
-
-  .remove-name{
+  .removeName{
     display: none;
   }
-  .remove-header{
+  .removeHeader{
     display: none;
   }
   /* MAIN CONTENT STYLES */
@@ -491,12 +249,7 @@ a:hover {
     padding: 20px;
     background-color: white;
   }
-  .navbutton {
-    margin-right: 30px;
-    margin-top: 10px;
-    cursor: pointer;
-    opacity: 0.5;
-  }
+   
 
   /* DONATIONS */
   .donations{
@@ -524,70 +277,20 @@ a:hover {
 }
 .table_head {
   font-size: 18px;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
+  position: relative;
 }
 .caret {
   cursor: pointer;
 }
-.caret_up_one {
-  position: relative;
-  left: 2px;
-  top: -4px;
+.caret_up {
+  position: absolute;
+  right: 15px;
 }
-.caret_down_one {
-  position: relative;
-  left: 47px;
-  top: -18px;
-}
-.caret_up_two {
-  position: relative;
-  left: 5px;
-  top: -4px;
-}
-.caret_down_two {
-  position: relative;
-  left: 68px;
-  top: -18px;
-}
-.caret_up_three {
-  position: relative;
-  left: 2px;
-  top: -4px;
-}
-.caret_down_three {
-  position: relative;
-  left: 120px;
-  top: -18px;
-}
-.caret_up_four {
-  position: relative;
-  left: 2px;
-  top: -4px;
-}
-.caret_down_four {
-  position: relative;
-  left: 48px;
-  top: -18px;
-}
-.caret_up_five {
-  position: relative;
-  left: 2px;
-  top: -4px;
-}
-.caret_down_five {
-  position: relative;
-  left: 125.5px;
-  top: -18px;
-}
-.caret_up_six {
-  position: relative;
-  left: 2px;
-  top: -4px;
-}
-.caret_down_six {
-  position: relative;
-  left: 58px;
-  top: -18px;
+.caret_down {
+  position: absolute;
+  top: 24px;
+  right: 15px;
 }
 .table_row {
   font-size: 16px;
@@ -610,6 +313,9 @@ a:hover {
 }
 
   @media (max-width: 991.98px) { 
+    .classess, bodt, .container{
+      overflow-x: hidden !important;
+    }
     .sidebar_header {
       width: 0px;
     }
